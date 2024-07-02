@@ -1,6 +1,6 @@
 # Yprey
 
-![yrprey](https://i.imgur.com/zHoDJG9_d.webp?maxwidth=760&fidelity=grand)
+![yrprey](https://i.imgur.com/HURjumd.png)
 
 **Backend created by [Fernando Mengali](https://www.linkedin.com/in/fernando-mengali-273504142/)**
 
