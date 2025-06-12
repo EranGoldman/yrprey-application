@@ -1,5 +1,12 @@
 version: "3.7"
 services:
+  app:
+   image: yrprey
+  #  command:  >
+  #       /bin/bash -c "
+  #       supervisord
+  #       "
+
   # mailer:
   #   image: maildev/maildev
   #   ports:
