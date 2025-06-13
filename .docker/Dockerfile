@@ -26,6 +26,7 @@ COPY ./frontend .
 RUN mv .env.production .env 
 
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_PRIVATE_STANDALONE=true
 
 # Build the application
 RUN yarn build
@@ -122,15 +123,19 @@ RUN /etc/init.d/mysql start
 
 
 
+
 # RUN chown nextjs:nodejs /app/.next
 # Automatically leverage output traces to reduce image size
 # Automatically leverage output traces to reduce image size
-COPY --from=builder  /app/_next/standalone /var/www/app/
+COPY --from=builder  /app/.next/standalone /var/www/app/
 COPY --from=builder  /app/next.config.js /var/www/app/
-COPY --from=builder  /app/_next/static /var/www/app/
-COPY --from=builder  /app/public /var/www/app/
+COPY --from=builder  /app/.next/static /var/www/app/.next/static
+COPY --from=builder  /app/public /var/www/app/public
+COPY --from=builder  /app/.env /var/www/app/.env
 
 EXPOSE 80
+
+EXPOSE 82
 
 EXPOSE 3000
 
