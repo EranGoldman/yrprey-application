@@ -1,5 +1,15 @@
 version: "3.7"
 services:
+  # app:
+  #  image: yrprey
+  #  ports:
+  #     - 3002:3000
+  #     - 82:80
+  #  command:  >
+  #       /bin/bash -c "
+  #       supervisord
+  #       "
+
   # mailer:
   #   image: maildev/maildev
   #   ports:
@@ -21,7 +31,7 @@ services:
       yarn && yarn dev"
 
   backend:
-    image: webdevops/php-apache:7.4-alpine
+    image: webdevops/php-apache:8.2-alpine
     working_dir: /var/www/html/
     restart: always
     ports:
